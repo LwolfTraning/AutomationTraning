@@ -14,17 +14,19 @@ public class GoogleDefinitions {
         googleTests.openGooglePage();
     }
 
-    @When("^User searches for pet clothes$")
-    public void userSearchesForPetClothes() {
-        googleTests.searchForPetClothes();
+    @When("^User searches for (.*)$")
+    public void userSearchesForPetClothes(String textToSearch) {
+        googleTests.searchForPetClothes(textToSearch);
     }
 
     @When("^User opens the first result$")
     public void userOpensTheFirstResult() {
+        googleTests.clickOnFirstResult();
     }
 
-    @Then("^User should be able to see the results$")
-    public void userShouldBeAbleToSeeTheResults() {
+    @Then("^User should be able to see (.*)$")
+    public void userShouldBeAbleToSeeTheResults(String textToCheck) {
+        googleTests.checkResult(textToCheck);
     }
 
 }
