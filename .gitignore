@@ -2,7 +2,6 @@
 
 /.idea
 /target
-src/test/resources/feature/
 /.gradle/
 /out/
 /build/
