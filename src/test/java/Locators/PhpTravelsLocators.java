@@ -29,4 +29,7 @@ public class PhpTravelsLocators extends PageObject {
 
     @FindBy(xpath = "//button[@id='demo']")
     public WebElementFacade submit;
+
+    @FindBy(xpath = "//div[@class='completed']//child::strong")
+    public WebElementFacade successMessage;
 }
