@@ -1,15 +1,17 @@
 package Tests;
 
 import Locators.GoogleLocators;
+import Utilities.Utils;
 import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
 
 public class GoogleTests extends PageObject {
 
     GoogleLocators googleLocators;
+    Utils utils;
 
-    public void openGooglePage(){
-        getDriver().get("https://www.google.com/");
+    public void openGooglePage(String url){
+        utils.openMainPage(url);
     }
 
     public void searchForPetClothes(String textToSearch){
