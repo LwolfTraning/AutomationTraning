@@ -33,7 +33,16 @@ public class PhpTravelsTests extends PageObject {
     }
 
     public void CheckSuccessMessage(String textToVerify){
-        Assert.assertTrue(phpTravelsLocators.successMessage.getText().trim().equals(textToVerify));
+        phpTravelsLocators.userInfo(textToVerify).shouldBeCurrentlyVisible();
+    }
+
+    public void clickOnSignUp(){
+        phpTravelsLocators.signUpBottom.click();
+    }
+
+    public void fullFillPersonalInformationForm(List<List<String>> personalInformationData){
+        phpTravelsLocators.firstNamePersonalInformationForm.type(personalInformationData.get(0).get(1));
+
     }
 
 }

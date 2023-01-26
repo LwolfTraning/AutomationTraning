@@ -17,3 +17,29 @@ Feature: Google Search.
       | Jaime     | Nose3    | CultureApparel | slondo@gmail.com |
 
 
+  @PhpTravelsRegistrationProcess
+  Scenario: As an user I want to register in Php Travels page
+    Given User is on the Php Travels main Page https://phptravels.com/demo/
+    And User clicks on Sign Up bottom
+    And User moves to new tab 1
+    When User full fills the personal information form
+      | firstName   | Alejandro      |
+      | lastName    | Vasquez        |
+      | email       | 1234@gamil.com |
+      | phoneNumber | 3004355561     |
+    When User full fills the Billing Address form
+      | companyName    | Lone Wolf          |
+      | streetAddress  | Calle test 123     |
+      | streetAddress2 | carrera prueba 456 |
+      | city           | Medellin           |
+      | state          | Antioquia          |
+      | postcode       | 123456             |
+      | country        | Colombia           |
+    When User full fills the Account Security form
+      | mobile | L3004355561 |
+    When User full fills the Billing Address form
+      | password         | Colombia1234+ |
+      | confirm password | Colombia1234+ |
+    And User clicks on captcha checkbox
+    And User clicks on register bottom
+    Then User should see the following message: Alejandro Vasquez

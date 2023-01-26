@@ -2,6 +2,7 @@ package Locators;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 public class PhpTravelsLocators extends PageObject {
@@ -32,4 +33,16 @@ public class PhpTravelsLocators extends PageObject {
 
     @FindBy(xpath = "//div[@class='completed']//child::strong")
     public WebElementFacade successMessage;
+
+    public WebElementFacade userInfo(String userName){
+        return getDriver().findElement(By.xpath("//*[text()='"+userName+"']"));
+    }
+
+    @FindBy(xpath = "//ul[@id='loginSignup']//a[@data-name='signup']")
+    public WebElementFacade signUpBottom;
+
+    @FindBy(xpath = "//input[@name='firstname']")
+    public WebElementFacade firstNamePersonalInformationForm;
 }
+
+//input[@name='firstname']
